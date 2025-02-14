@@ -1,0 +1,289 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg2.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    filter: blur(3px); /* Applies the blur effect */
+    z-index: -1; /* Ensures the pseudo-element is behind the content */
+}
+
+/* Styling for the navbar title (adapted from the button CSS) */
+.navbar .title {
+    color: rgb(231, 36, 169);
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    cursor: pointer;
+    padding: 14px 20px; /* Add padding for better spacing */
+}
+
+.navbar .title::before {
+    margin-left: auto;
+}
+
+.navbar .title::after,
+.navbar .title::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: 0.5s;
+}
+
+.navbar .title:hover::after,
+.navbar .title:hover::before {
+    width: 100%;
+}
+
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.navbar .nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Styling for anchor tags (adapted from the button CSS) */
+
+  .card {
+    width: 320px;
+    height: auto;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    background: linear-gradient(#545353, #464646) padding-box,
+                linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transform-origin: right bottom;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+    rotate: 8deg;
+}
+
+/* Circular User Image */
+.user-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #e81cff;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* User Details */
+.user-details {
+    font-size: 16px;
+    font-weight: 500;
+    color: #46decf;
+    line-height: 1.6;
+}
+
+.user-details span {
+    font-weight: bold;
+    color: #d8ce0d;
+}
+  
+
+.navbar .nav-links a {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: rgb(220, 144, 30); /* Text color */
+  text-align: center;
+  line-height: 3em; /* Vertically center text */
+  text-decoration: none;
+  background-color: white; /* Default background */
+}
+
+.navbar .nav-links a::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.navbar .nav-links a:hover::before {
+  width: 9em;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the two divs */
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+
+/* 🔹 Popup Overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* 🔹 Form Card Effect */
+.form-card1 {
+  background-image: linear-gradient(163deg, #64ffda 0%, #64ffda 100%);
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(100, 255, 218, 0.3);
+}
+
+.form-card2 {
+  border-radius: 0;
+  transition: all 0.2s;
+  padding: 10px;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+  border-radius: 15px;
+}
+
+/* 🔹 Form Design */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 40px;
+  padding-inline: 5em;
+  padding-bottom: 0.9em;
+  background-color: #292727;
+  border-radius: 20px;
+  width: 450px;
+  height: 450px;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 1em;
+  color: #64ffda;
+  font-size: 1.2em;
+  background-color: transparent;
+  align-self: center;
+}
+
+/* 🔹 Input Fields */
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9em;
+  border-radius: 10px;
+  padding: 0.9em;
+  margin-top: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #222121;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 15px;
+  color: #38e73b;
+  font-weight: bold;
+  padding-inline: 1em;
+}
+
+/* 🔹 Submit Button */
+.sendMessage-btn {
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 3em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #64ffda;
+  font-weight: bold;
+  outline: 1px solid #64ffda;
+  transition: all ease-in-out 0.3s;
+}
+
+.sendMessage-btn:hover {
+  transition: all ease-in-out 0.3s;
+  background-color: #64ffda;
+  color: #000;
+  cursor: pointer;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+/* 🔹 Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  color: #ff4d4d;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff0000;
+}

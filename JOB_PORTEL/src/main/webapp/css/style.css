@@ -1,0 +1,442 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Container to align elements */
+.logo-container {
+    text-align: center; /* Centers the text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust spacing */
+  }
+  
+  /* Logo Hover Effect */
+  .logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .logo:hover {
+    transform: translateY(-5px);
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo:active {
+    transform: scale(0.95);
+  }
+  
+  /* Typing Effect for Heading */
+  .animated-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d9641b;
+    display: inline-block;
+    border-right: 2px solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) forwards;
+  }
+  
+  /* Typing Cursor Blink Effect */
+  .animated-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  /* Typing Animation */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Fade-in Effect for Paragraph */
+  .fade-in-text {
+    font-size: 18px;
+    font-weight: 1000;
+    color: #e71bcb;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 3s; /* Delays paragraph appearance until heading is done */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f3128e;
+}
+
+/* Footer Styles */
+.footer {
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    margin: 10px 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* From Uiverse.io by KINGFRESS - Adapted for Hyperlinks */
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #171717;
+    padding: 1em 2em;
+    border: none;
+    border-radius: .6rem;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Ensure padding and other properties work correctly */
+  }
+  
+  a span:not(:nth-child(6)) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 30px;
+    width: 30px;
+    background-color: #0c66ed;
+    border-radius: 50%;
+    transition: .6s ease;
+  }
+  
+  a span:nth-child(6) {
+    position: relative;
+  }
+  
+  a span:nth-child(1) {
+    transform: translate(-3.3em, -4em);
+  }
+  
+  a span:nth-child(2) {
+    transform: translate(-6em, 1.3em);
+  }
+  
+  a span:nth-child(3) {
+    transform: translate(-.2em, 1.8em);
+  }
+  
+  a span:nth-child(4) {
+    transform: translate(3.5em, 1.4em);
+  }
+  
+  a span:nth-child(5) {
+    transform: translate(3.5em, -3.8em);
+  }
+  
+  a:hover span:not(:nth-child(6)) {
+    transform: translate(-50%, -50%) scale(4);
+    transition: 1.5s ease;
+  }
+
+ 
+
+/* Container for all posts */
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual post styling */
+.post {
+  width: 900px;
+  height:700px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgb(0, 0, 255);
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.post:hover {
+  transform: scale(1.02);
+}
+
+/* Post Header (User Info) */
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Post Content */
+.post-title {
+  font-size: 20px;
+  margin: 10px 0;
+  color:pink;
+}
+
+.post-description {
+  font-size: 16px;
+  color:white;
+}
+
+.post-image {
+  width: 600px;
+  height:500px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Action Buttons */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.action-button {
+  padding: 8px 15px;
+  border: none;
+  background: rgb(255, 0, 0);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.action-button:hover {
+  background: rgb(255, 128, 0);
+}
+
+
+/* Post form container */
+.post-form {
+  
+   border: 4px solid #7cdacc;
+  box-shadow: 0 6px 10px rgba(207, 212, 222, 1);
+  border-radius: 10px;
+  width: 300px;
+ 
+  
+}
+
+.post-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: palevioletred
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: palevioletred
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+/* Submit button styling */
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+.mainCont{
+  display: flex;
+   /* Distributes space between the boxes */
+  align-items: center; /* Vertically centers the boxes */
+ 
+}
+
+#postForm {
+    position: fixed;
+    top: 60%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: white;
+    width: 400px;
+}

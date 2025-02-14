@@ -1,0 +1,377 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg2.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    filter: blur(3px); /* Applies the blur effect */
+    z-index: -1; /* Ensures the pseudo-element is behind the content */
+}
+
+/* Styling for the navbar title (adapted from the button CSS) */
+.navbar .title {
+    color: rgb(231, 36, 169);
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    cursor: pointer;
+    padding: 14px 20px; /* Add padding for better spacing */
+}
+
+.navbar .title::before {
+    margin-left: auto;
+}
+
+.navbar .title::after,
+.navbar .title::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: 0.5s;
+}
+
+.navbar .title:hover::after,
+.navbar .title:hover::before {
+    width: 100%;
+}
+
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.navbar .nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Styling for anchor tags (adapted from the button CSS) */
+.navbar .nav-links a {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: rgb(220, 144, 30); /* Text color */
+    text-align: center;
+    line-height: 3em; /* Vertically center text */
+    text-decoration: none;
+    background-color: white; /* Default background */
+}
+
+.navbar .nav-links a::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.navbar .nav-links a:hover::before {
+    width: 9em;
+}
+
+
+.navbar .search_bar {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    justify-content: center; /* Centers the search bar */
+}
+
+.navbar .search_bar .input {
+    
+    height: 20px;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white; /* Text color */
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .search_bar .input:focus {
+    color: rgb(0, 255, 255);
+    background-color: #373535;
+    outline-color: rgb(0, 255, 255);
+    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+}
+.search_btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search_btn:hover {
+    background: rgb(0, 255, 255);
+    color: black;
+}
+
+
+.card {
+    margin: auto;
+    width: min(300px, 100%);
+    background-color: #fefefe;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: #141417;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card__hero {
+    background-color: #fef4e2;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 1.5rem;
+    font-size: 0.875rem;
+}
+
+.card__hero .card__job-title {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card__footer {
+    padding: 0.75rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.card__job-summary {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.card__btn {
+    width: 90px;
+    border: solid 2px rgb(0, 255, 255);;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 1rem;
+    background-color: #141417;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.card__btn:hover {
+    background-color: #000;
+}
+
+/* Container to hold all job cards */
+.job-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card__footer {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* From Uiverse.io by aadium */ 
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-image: linear-gradient(45deg, #330808, 
+  #3a2c09);
+  border-radius: 2.5em;
+  padding: 30px;
+  width: 300px;
+  height: 350px;
+}
+
+.form::before {
+  content: '';
+  background-image: linear-gradient(45deg, #ff0000, 
+  #ffb700);
+  height: 358px;
+  width: 309px;
+  position: absolute;
+  margin-top: -34px;
+  margin-left: px;
+  z-index: -1;
+  border-radius: 2.7em;
+}
+
+.button {
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  background: #ff5900;
+  color: black;
+  padding: 0.7em 5.5em;
+  display: flex;
+  align-items: center;
+  border: 2px solid #66da4300;
+  border-radius: 5em;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 2px solid #ff5900;
+  background: #00000000;
+  color: #ff5900;
+}
+
+.button:active {
+  border: 2px solid #66da4300;
+  background: #ff5900;
+  color: black;
+}
+
+.input {
+  width: calc(100% - 10px);
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #66da4300;
+  border-bottom: 1px solid #ff5900;
+  outline: none;
+  background-color: transparent;
+  color: #ff5900;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border: 1px solid #66da4300;
+  border-bottom: 1px solid #ff5900;
+  background-color: transparent;
+  color: white;
+}
+
+.input::placeholder {
+  color: #9b725b;
+}
+
+.textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  width: calc(100% - 10px);
+  padding: 8px;
+  height: 100px;
+  margin-bottom: 20px;
+  border: 1px solid #66da4300;
+  border-bottom: 1px solid #ff5900;
+  outline: none;
+  background-color: transparent;
+  color: #ff5900;
+}
+
+.textarea::placeholder {
+  color: #9b725b;
+}
+
+.textarea:focus {
+  border: 1px solid #66da4300;
+  border-bottom: 1px solid #ff5900;
+  background-color: transparent;
+  color: white;
+}
+
+.modal-content {
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    width: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
